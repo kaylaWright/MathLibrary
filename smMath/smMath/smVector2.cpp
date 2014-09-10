@@ -57,8 +57,11 @@ smVector2  smVector2::Normalize()
 
 smVector2 smVector2::operator=(const smVector2 &_vec)
 {   
-	this->x = _vec.x;
-	this->y = _vec.y;
+	if(*this != _vec)
+	{
+		this->x = _vec.x;
+		this->y = _vec.y;
+	}
 
 	return *this;
 }

@@ -56,9 +56,12 @@ smVector3  smVector3::Normalize()
 
 smVector3 smVector3::operator=(const smVector3 &_vec)
 {   
-	this->x = _vec.x;
-	this->y = _vec.y;
-	this->z = _vec.z;
+	if(*this != _vec)
+	{
+		this->x = _vec.x;
+		this->y = _vec.y;
+		this->z = _vec.z;
+	}
 
 	return *this;
 }
